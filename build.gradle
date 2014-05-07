@@ -16,4 +16,5 @@ repositories {
 dependencies {
     compile 'org.codehaus.groovy:groovy-all:2.3.0'
     compile 'mysql:mysql-connector-java:5.1.30'
+    compile 'net.sourceforge.jtds:jtds:1.3.1'
 }

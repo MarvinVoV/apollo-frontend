@@ -14,8 +14,8 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" exported="" name="Gradle: groovy-2.3.0" level="project" />
     <orderEntry type="library" exported="" name="Gradle: mysql-connector-java-5.1.30" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: groovy-all-2.3.0" level="project" />
   </component>
 </module>
 

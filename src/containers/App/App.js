@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import './App.css';
+import '../../theme/App.css';
 import {Layout, Menu, Icon} from "antd";
-import ArticleList from './components/ArticleList'
+import ArticleList from '../../components/ArticleList'
 
 const {
     Header, Content, Footer, Sider

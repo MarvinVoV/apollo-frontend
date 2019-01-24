@@ -1,34 +1,20 @@
 import React, {Component} from 'react';
+import ArticleItem from './ArticleItem';
+import {connect} from 'react-redux';
 
-class ArticleItem extends Component {
-    render() {
-        return (
-            <div>
-                <div>
-                    <div>{this.props.article.title}</div>
-                    <div>{this.props.article.content}</div>
-                </div>
-                <hr/>
-            </div>
-        );
-    }
-}
 
-export default class ArticleList extends Component {
-    constructor(props) {
-        super(props);
-    }
+const mapStateToProps = state => {
+    return {articles: state.home.articles}
+};
 
-    render() {
-        const articles = this.props.articles.map(item =>
-            <ArticleItem key={item.id} article={item}/>
-        );
+const ConnectedArticleList = ({articles}) => (
+    <div>
+        {articles.map(article =>
+            <ArticleItem key={article.id} article={article}/>
+        )}
+    </div>
+);
 
-        return (
-            <div>
-                {articles}
-            </div>
-        );
-    }
-}
+const ArticleList = connect(mapStateToProps)(ConnectedArticleList);
+export default ArticleList;
 

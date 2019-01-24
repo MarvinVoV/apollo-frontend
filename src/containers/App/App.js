@@ -2,33 +2,18 @@ import React, {Component} from 'react';
 import '../../theme/App.css';
 import {Layout, Menu, Icon} from "antd";
 import ArticleList from '../../components/ArticleList'
+import {loadArticles} from '../../redux/actions';
+import {connect} from "react-redux";
+import LoadMore from '../../components/LoadMore';
+
 
 const {
     Header, Content, Footer, Sider
 } = Layout;
 
 class App extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {articles: []}
-    }
-
     componentDidMount() {
-        fetch("http://localhost:8080/article", {
-            method: 'POST',
-            body: JSON.stringify({
-                pageNum: 1,
-                pageSize: 10
-            })
-        }).then(response => response.json()
-        ).then((data) => {
-                console.log(data);
-                this.setState({articles: data.list})
-            },
-            (error) => {
-                console.log("error....", error);
-            }
-        )
+        this.props.loadArticles({pageNum: 1, pageSize: 100});
     }
 
     render() {
@@ -79,7 +64,10 @@ class App extends Component {
                         <div style={{padding: 24, background: '#fff', textAlign: 'center'}}>
                             ...
                             <br/>
-                            <ArticleList articles={this.state.articles}/>
+                            <ArticleList/>
+                        </div>
+                        <div>
+                            <LoadMore/>
                         </div>
                     </Content>
                     <Footer style={{textAlign: 'center'}}>
@@ -91,4 +79,4 @@ class App extends Component {
     }
 }
 
-export default App;
+export default connect(null, {loadArticles})(App);

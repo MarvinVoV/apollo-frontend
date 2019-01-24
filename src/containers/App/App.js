@@ -13,7 +13,7 @@ const {
 
 class App extends Component {
     componentDidMount() {
-        this.props.loadArticles({pageNum: 1, pageSize: 100});
+        this.props.loadArticles();
     }
 
     render() {

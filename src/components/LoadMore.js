@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import PropTypes from 'prop-types';
 import {loadArticles} from '../redux/actions';
 
 class ConnectedLoadMore extends Component {
@@ -28,12 +27,6 @@ class ConnectedLoadMore extends Component {
         );
     }
 }
-
-ConnectedLoadMore.propTypes = {
-    pageNum: PropTypes.number.required,
-    pageSize: PropTypes.number.required
-};
-
 
 const mapDispatchToProps = dispatch => {
     return {

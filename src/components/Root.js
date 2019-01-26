@@ -7,7 +7,6 @@ import App from '../containers/App/App';
 import About from '../containers/About';
 import NoMatch from '../containers/NoMatch';
 import DefaultLayout from "./Layout/DefaultLayout";
-import Post from '../containers/Post';
 
 
 const Root = ({store}) => (
@@ -16,7 +15,6 @@ const Root = ({store}) => (
             <Switch>
                 <IndexLayout path="/" exact component={App}/>
                 <IndexLayout path="/about" component={About}/>
-                <IndexLayout path="/post" component={Post}/>
                 <DefaultLayout component={NoMatch}/>
             </Switch>
         </Router>

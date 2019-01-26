@@ -16,7 +16,6 @@ const IndexLayout = ({component: Component, ...rest}) => {
                     <ul>
                         <li><a href="/">Index</a></li>
                         <li><a href="/about">about</a></li>
-                        <li><a href="/post">post</a></li>
                     </ul>
                 </Sider>
                 <Layout>

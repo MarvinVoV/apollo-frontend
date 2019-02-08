@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import {Layout, Menu, Icon} from "antd";
 import DefaultLayout from './DefaultLayout';
+import '../../theme/App.css';
+
 
 const {
     Header, Content, Footer, Sider
@@ -10,9 +12,7 @@ const IndexLayout = ({component: Component, ...rest}) => {
     return (
         <DefaultLayout {...rest} component={matchProps => (
             <Layout>
-                <Sider breakpoint="lg" collapsedWidth="0" theme="light" width="300" style={{
-                    overflow: 'auto', left: 0
-                }}>
+                <Sider breakpoint="lg" collapsedWidth="0" theme="light" width="300" className="sider">
                     <ul>
                         <li><a href="/">Index</a></li>
                         <li><a href="/about">about</a></li>

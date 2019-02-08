@@ -1,12 +1,26 @@
+import React from 'react';
 import types from './types';
+import PropTypes from 'prop-types';
+import * as configuration from '../config';
 
-export const loadArticles = (pageInfo) => {
+export const loadArticles = (pageInfo = {pageNum: 1, pageSize: 5}) => {
     return (dispatch) => {
-        return fetch("https://jsonplaceholder.typicode.com/posts")
-            .then(response => response.json())
+        let formData = new FormData();
+        formData.set('pageNum', pageInfo.pageNum);
+        formData.set('pageSize', pageInfo.pageSize);
+        return fetch(configuration.URL + '/article', {
+            method: 'POST',
+            body:formData
+        }).then(response => response.json())
             .then(json => {
                 dispatch({type: types.LOAD_ARTICLES, payload: json})
             });
     }
 };
 
+loadArticles.protoTypes = {
+    pageInfo: PropTypes.shape({
+        pageNum: PropTypes.number.required,
+        pageSize: PropTypes.number.required
+    })
+};

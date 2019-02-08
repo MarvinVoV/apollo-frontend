@@ -5,6 +5,7 @@ import ArticleList from '../../components/ArticleList'
 import {loadArticles} from '../../redux/actions';
 import {connect} from "react-redux";
 import LoadMore from '../../components/LoadMore';
+import ArticlePagination from '../../components/Article/ArticlePagination';
 
 
 const {
@@ -20,12 +21,10 @@ class App extends Component {
         return (
             <div>
                 <div style={{padding: 24, background: '#fff', textAlign: 'center'}}>
-                    ...
-                    <br/>
                     <ArticleList/>
                 </div>
                 <div>
-                    <LoadMore/>
+                    <ArticlePagination/>
                 </div>
             </div>
         );

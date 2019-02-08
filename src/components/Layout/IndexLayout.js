@@ -10,8 +10,8 @@ const IndexLayout = ({component: Component, ...rest}) => {
     return (
         <DefaultLayout {...rest} component={matchProps => (
             <Layout>
-                <Sider theme="light" style={{
-                    overflow: 'auto', height: '100vh', left: 0,
+                <Sider breakpoint="lg" collapsedWidth="0" theme="light" width="300" style={{
+                    overflow: 'auto', left: 0
                 }}>
                     <ul>
                         <li><a href="/">Index</a></li>
@@ -19,7 +19,7 @@ const IndexLayout = ({component: Component, ...rest}) => {
                     </ul>
                 </Sider>
                 <Layout>
-                    <Content style={{margin: '24px 16px 0', overflow: 'initial'}}>
+                    <Content style={{margin: '1px 1px 0', overflow: 'initial'}}>
                         <Component {...matchProps} />
                     </Content>
                 </Layout>

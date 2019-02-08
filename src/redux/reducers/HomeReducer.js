@@ -1,7 +1,14 @@
 import types from '../types';
 
 const initStatus = {
-    articles: []
+    articleModel: {
+        list: [],
+        total: 0,
+        pageNo: 1,
+        pageSize: 5,
+        totalPages: 0
+    }
+
 };
 
 const homeReducer = (state = initStatus, action) => {
@@ -10,8 +17,17 @@ const homeReducer = (state = initStatus, action) => {
     }
     switch (action.type) {
         case types.LOAD_ARTICLES: {
+            if (action.payload === 'undefined') {
+                return state;
+            }
             return Object.assign({}, state, {
-                articles: state.articles.concat(action.payload)
+                articleModel: {
+                    list: action.payload.list,
+                    total: action.payload.total,
+                    pageNo: action.payload.pageNo,
+                    pageSize: action.payload.pageSize,
+                    totalPages: action.payload.totalPages
+                }
             });
         }
         default:

@@ -5,12 +5,12 @@ import uuidv1 from 'uuid';
 
 
 const mapStateToProps = state => {
-    return {articles: state.home.articles}
+    return {articleModel: state.home.articleModel}
 };
 
-const ConnectedArticleList = ({articles}) => (
+const ConnectedArticleList = ({articleModel}) => (
     <div>
-        {articles.map(article =>
+        {articleModel.list.map(article =>
             <ArticleItem key={article.id + '_' + uuidv1()} article={article}/>
         )}
     </div>

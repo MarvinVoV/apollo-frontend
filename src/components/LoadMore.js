@@ -1,29 +1,30 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {loadArticles} from '../redux/actions';
+import {Button} from 'antd';
 
 class ConnectedLoadMore extends Component {
     constructor(props) {
         super(props);
         this.state = {
             pageNum: 1,
-            pageSize: 5
+            pageSize: 5,
+            loading: false
         };
         this.onClick = this.onClick.bind(this);
     }
 
     onClick(event) {
         event.preventDefault();
-        const pageInfo = {pageNum: this.state.pageNum + 1, pageSize: this.state.pageSize};
+        this.setState({pageNum: this.state.pageNum, pageSize: this.state.pageSize, loading: true});
+        const pageInfo = {pageNum: this.state.pageNum + 1, pageSize: this.state.pageSize, loading: false};
         this.props.onLoadMoreClick(pageInfo);
         this.setState(pageInfo);
     }
 
     render() {
         return (
-            <a href="" onClick={this.onClick}>
-                load more
-            </a>
+            <Button type="dashed" loading={this.state.loading} onClick={this.onClick} block>加载更多</Button>
         );
     }
 }

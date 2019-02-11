@@ -20,7 +20,7 @@ class App extends Component {
     render() {
         return (
             <div>
-                <div style={{padding: 24, background: '#fff', textAlign: 'center'}}>
+                <div style={{padding: 24, background: '#fff'}}>
                     <ArticleList/>
                 </div>
                 <div>

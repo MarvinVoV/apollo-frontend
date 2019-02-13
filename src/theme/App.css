@@ -82,12 +82,29 @@ code {
 .article_title {
     font-size: 3.0rem;
     line-height: 1.2;
-    color: black;
+    /*color: black;*/
 }
 
 .article_meta_info {
-    color: #8590A6;
-    font-size: 14px;
+    color: #b4b4b4;
+    font-size: 13px;
     margin-top: 10px;
     margin-bottom: 10px;
+}
+
+.article_meta_info a {
+    color: #b4b4b4;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.article_meta_info a:hover {
+    text-decoration: underline;
+    color: dodgerblue;
+}
+
+.article_meta_item {
+    color: #b4b4b4;
+    font-size: 13px;
+    margin-left: 5px;
+    margin-right: 10px;
 }

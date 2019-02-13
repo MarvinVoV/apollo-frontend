@@ -19,7 +19,7 @@ const DefaultLayout = ({component: Component, ...rest}) => {
                     <Component {...matchProps}/>
                 </Content>
                 <Footer className="footer">
-                    Ant Design ©2018 Created by Ant UED
+                    ©2018-2019 Created by sunyameng / 博客 / 豫ICP备19004908号-1
                 </Footer>
             </Layout>
         )}>

@@ -64,6 +64,7 @@ code {
 
 .content {
     min-height: initial !important;
+    background-color: #f0f2f5;
 }
 
 .footer {
@@ -75,9 +76,32 @@ code {
 .default_layout {
     height: 100%;
     min-height: 100%;
-    background-color: white;
 }
 
+.default_layout_header {
+    background-color: #fff;
+    overflow: initial;
+    margin-bottom: 1px;
+}
+
+
+.default_layout_header .logo {
+    float: left;
+    font-weight: bolder;
+}
+
+.default_layout_header .menu {
+    line-height: 63px;
+    float: right;
+    font-weight: bolder;
+}
+
+.main_layout_content {
+    margin: 1px 1px 0;
+    overflow: initial;
+    padding-left: 15%;
+    background-color: white;
+}
 
 .article_title {
     font-size: 3.0rem;
@@ -97,6 +121,7 @@ code {
     text-decoration: none;
     text-transform: uppercase;
 }
+
 .article_meta_info a:hover {
     text-decoration: underline;
     color: dodgerblue;
@@ -108,3 +133,20 @@ code {
     margin-left: 5px;
     margin-right: 10px;
 }
+
+.share_brands ul, li {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    width: auto;
+
+}
+
+.share_brands ul li a, .share_brands ul li a:visited{
+    float:left;
+    padding: 5px 8px;
+    text-decoration: none;
+    white-space: nowrap;
+    display: block;
+}
+

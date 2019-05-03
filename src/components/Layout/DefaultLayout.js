@@ -29,7 +29,7 @@ const DefaultLayout = ({component: Component, ...rest}) => {
                     <Component {...matchProps}/>
                 </Content>
                 <Footer className="footer">
-                    ©2018-2019 Created by sunyameng / 博客 / 豫ICP备19004908号-1
+                    ©2018-2019 Created by sunyameng / 博客
                 </Footer>
             </Layout>
         )}>

@@ -19,9 +19,10 @@
     "react-scripts": "^3.0.0"
   },
   "scripts": {
-    "start": "webpack-dev-server --open --config webpack.prod.js",
-    "watch": "webpack --watch",
-    "build": "webpack --config webpack.prod.js",
+    "start:dev": "webpack-dev-server --open -w --progress --config webpack.dev.js",
+    "start:prod": "webpack-dev-server --config webpack.prod.js",
+    "build:dev": "webpack --config webpack.dev.js",
+    "build:prod": "webpack --config webpack.prod.js",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

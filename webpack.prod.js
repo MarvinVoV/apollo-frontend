@@ -6,6 +6,12 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 module.exports = merge(common, {
     mode: 'production',
     devtool: 'cheap-module-source-map',
+    devServer: {
+        contentBase: './dist',
+        hot: true,
+        overlay: true,
+        port: 8080,
+    },
     plugins: [
         new CompressionPlugin({
             filename: "[path].gz[query]",

@@ -5,3 +5,5 @@ start
 ```bash
 npm run start:dev
 ```
+
+## Production

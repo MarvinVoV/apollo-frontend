@@ -11,7 +11,11 @@ module.exports = merge(common, {
         hot: true,
         overlay: true,
         compress: true,
-        disableHostCheck: true // solve "Invalid Host header"
+        disableHostCheck: true, // solve "Invalid Host header"
+        historyApiFallback: true // solve "Cannot GET /article"
+    },
+    output: {
+        publicPath: '/' // solve "Cannot GET /article"
     },
     plugins: [
         new CompressionPlugin({

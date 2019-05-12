@@ -9,8 +9,7 @@ module.exports = merge(common, {
     devServer: {
         contentBase: './dist',
         hot: true,
-        overlay: true,
-        port: 80,
+        overlay: true
     },
     plugins: [
         new CompressionPlugin({

@@ -9,7 +9,9 @@ module.exports = merge(common, {
     devServer: {
         contentBase: './dist',
         hot: true,
-        overlay: true
+        overlay: true,
+        compress: true,
+        disableHostCheck: true // solve "Invalid Host header"
     },
     plugins: [
         new CompressionPlugin({

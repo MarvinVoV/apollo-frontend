@@ -1,17 +1,17 @@
 import React, {Component} from 'react';
-import ArticleItem from './ArticleItem';
+import ArticleListItem from './ArticleListItem';
 import {connect} from 'react-redux';
 import uuidv1 from 'uuid';
 
 
 const mapStateToProps = state => {
-    return {articleModel: state.home.articleModel}
+    return {articleList: state.article.articleList}
 };
 
-const ConnectedArticleList = ({articleModel}) => (
+const ConnectedArticleList = ({articleList}) => (
     <div>
-        {articleModel.list.map(article =>
-            <ArticleItem key={article.id + '_' + uuidv1()} article={article}/>
+        {articleList.list.map(article =>
+            <ArticleListItem key={article.id + '_' + uuidv1()} article={article}/>
         )}
     </div>
 );

@@ -1,10 +1,9 @@
 import React, {Component} from 'react';
 import '../../theme/App.css';
-import {Layout, Menu, Icon} from "antd";
-import ArticleList from '../../components/ArticleList'
+import {Layout} from "antd";
+import ArticleList from '../../components/Article/ArticleList'
 import {loadArticles} from '../../redux/actions';
 import {connect} from "react-redux";
-import LoadMore from '../../components/LoadMore';
 import ArticlePagination from '../../components/Article/ArticlePagination';
 
 

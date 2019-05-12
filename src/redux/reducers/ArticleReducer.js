@@ -1,27 +1,24 @@
-import types from '../types';
+import actionTypes from '../actionTypes';
 
 const initStatus = {
-    articleModel: {
+    articleList: {
         list: [],
         total: 0,
         pageNo: 1,
         pageSize: 5,
         totalPages: 0
-    }
-
+    },
+    article: {}
 };
 
-const homeReducer = (state = initStatus, action) => {
-    if (typeof action === 'undefined') {
+const articleReducer = (state = initStatus, action) => {
+    if (typeof action === 'undefined' || action.payload === 'undefined') {
         return state;
     }
     switch (action.type) {
-        case types.LOAD_ARTICLES: {
-            if (action.payload === 'undefined') {
-                return state;
-            }
+        case actionTypes.article.loadArticles: {
             return Object.assign({}, state, {
-                articleModel: {
+                articleList: {
                     list: action.payload.list,
                     total: action.payload.total,
                     pageNo: action.payload.pageNo,
@@ -30,9 +27,14 @@ const homeReducer = (state = initStatus, action) => {
                 }
             });
         }
+        case actionTypes.article.loadArticle: {
+            return Object.assign({}, state, {
+                article: action.payload ? action.payload : {}
+            });
+        }
         default:
             return state;
     }
 };
 
-export default homeReducer;
+export default articleReducer;

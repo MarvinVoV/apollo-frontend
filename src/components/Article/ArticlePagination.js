@@ -5,7 +5,7 @@ import {Pagination} from "antd";
 import '../../theme/App.css';
 
 const mapStateToProps = state => {
-    return {articleModel: state.home.articleModel}
+    return {articleList: state.article.articleList}
 };
 
 class ArticlePagination extends Component {
@@ -20,9 +20,9 @@ class ArticlePagination extends Component {
 
     render() {
         return (<div className="article-pagination-div">
-                <Pagination defaultCurrent={this.props.articleModel.pageNo}
-                            defaultPageSize={this.props.articleModel.pageSize}
-                            total={this.props.articleModel.total}
+                <Pagination defaultCurrent={this.props.articleList.pageNo}
+                            defaultPageSize={this.props.articleList.pageSize}
+                            total={this.props.articleList.total}
                             onChange={this.onChange}/>
             </div>
         );

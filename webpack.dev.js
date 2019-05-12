@@ -9,5 +9,9 @@ module.exports = merge(common, {
         hot: true,
         overlay: true,
         port: 3000,
+        historyApiFallback: true
+    },
+    output: {
+        publicPath: '/'
     }
 });

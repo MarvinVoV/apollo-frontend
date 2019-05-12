@@ -29,7 +29,6 @@ const IndexLayout = ({component: Component, ...rest}) => {
                             <Tag>Tag 2</Tag>
                         </Card>
                         <Card title="关于我" bordered={false}>
-                            <div>这是我的照片</div>
                             <div>这是一段描述</div>
                             <div className="share_brands">
                                 <ul>

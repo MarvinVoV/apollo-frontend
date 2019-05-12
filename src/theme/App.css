@@ -104,9 +104,16 @@ code {
 }
 
 .article_title {
-    font-size: 3.0rem;
+    font-size: 2.4rem;
     line-height: 1.2;
     /*color: black;*/
+}
+
+.article_title a {
+    color: #4A4A4A;
+}
+.article_title a:hover {
+    color: #1890ff;
 }
 
 .article_meta_info {
@@ -142,11 +149,27 @@ code {
 
 }
 
-.share_brands ul li a, .share_brands ul li a:visited{
-    float:left;
+.share_brands ul li a, .share_brands ul li a:visited {
+    float: left;
     padding: 5px 8px;
     text-decoration: none;
     white-space: nowrap;
     display: block;
 }
 
+pre {
+    background: #f2f3f4;
+    padding: 16px;
+    white-space: pre;
+    word-wrap: break-word;
+    overflow: auto;
+    border-radius: 4px;
+    border-collapse: separate;
+}
+
+/*pre.code {*/
+    /*margin: 20px 25px;*/
+    /*border-radius: 20px;*/
+    /*border: 1px solid #292929;*/
+    /*position: relative;*/
+/*}*/

@@ -21,7 +21,7 @@ const DefaultLayout = ({component: Component, ...rest}) => {
                         className="menu"
                     >
                         <Menu.Item key="home"><Link to="/">HOME</Link></Menu.Item>
-                        <Menu.Item key="about"><Link to="/about">ABOUT</Link></Menu.Item>
+                        <Menu.Item key="about"><Link to="/front/about">ABOUT</Link></Menu.Item>
                     </Menu>
                 </Header>
 

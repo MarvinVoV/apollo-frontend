@@ -1,9 +1,17 @@
 # Apollo FrontEnd
 
 ## Development
+
+cd project_dir
+
 start
 ```bash
-npm run start:dev
+./start_dev
+```
+
+stop Nginx
+```bash
+nginx -s quit
 ```
 
 ## Production

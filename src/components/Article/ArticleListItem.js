@@ -8,6 +8,7 @@ import 'moment/locale/zh-cn'
 import '../../theme/App.css';
 import MarkdownParser from '../MarkdownParser';
 import {parseResponse} from "../../utils/Tools";
+import config from '../../config'
 
 library.add(faHeart, faCommentAlt, faShareAlt, faCoffee);
 moment.locale('zh-cn');
@@ -43,7 +44,7 @@ const ArticleListItem = ({article}) => {
         <div>
             <div>
                 <div className="article_title">
-                    <a href={'/article/p/' + data.id}>{data.title}</a>
+                    <a href={'/front/article/p/' + data.id}>{data.title}</a>
                 </div>
                 <div className="article_meta_info">
                     <span> 发布于 {moment(new Date(data.modifiedTime)).fromNow()}</span>

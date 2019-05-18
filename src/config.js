@@ -1,6 +1,6 @@
 const SERVICE_URL = {
-    production: 'http://isunyameng.com:8081',
-    development: 'http://localhost:8081'
+    production: 'http://isunyameng.com/server',
+    development: 'http://localhost/server'
 };
 
 const ENV = process.env.NODE_ENV === 'production' ? 'production' : 'development';

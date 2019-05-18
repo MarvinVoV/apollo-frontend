@@ -15,8 +15,8 @@ const Root = ({store}) => (
         <Router>
             <Switch>
                 <IndexLayout path="/" exact component={App}/>
-                <IndexLayout path="/article/p/:id" component={Article}/>
-                <IndexLayout path="/about" component={About}/>
+                <IndexLayout path="/front/article/p/:id" component={Article}/>
+                <IndexLayout path="/front/about" component={About}/>
                 <DefaultLayout component={NoMatch}/>
             </Switch>
         </Router>

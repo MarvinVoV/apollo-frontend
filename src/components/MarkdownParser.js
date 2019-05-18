@@ -1,9 +1,17 @@
 import React from 'react';
-import hljs from 'highlight.js';
+import hljs from 'highlight.js/lib/highlight';
 import 'highlight.js/styles/github.css';
 import marked from 'marked';
 import '../theme/App.css';
 
+
+['javascript', 'python', 'java', 'kotlin', 'sql',
+    'cpp', 'swift', 'less', 'css', 'bash', 'nginx',
+    'markdown', 'xml', 'php', 'yaml', 'json', 'dockerfile', 'shell'].forEach((langName) => {
+    // Using require() here because import() support hasn't landed in Webpack yet
+    const langModule = require(`highlight.js/lib/languages/${langName}`);
+    hljs.registerLanguage(langName, langModule);
+});
 
 
 class MarkdownParser extends React.Component {

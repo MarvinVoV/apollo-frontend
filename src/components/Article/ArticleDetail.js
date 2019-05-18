@@ -1,6 +1,9 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {faCoffee, faCommentAlt, faHeart, faShareAlt} from "@fortawesome/free-solid-svg-icons";
+import {faCoffee} from "@fortawesome/free-solid-svg-icons/faCoffee";
+import {faCommentAlt} from "@fortawesome/free-solid-svg-icons/faCommentAlt";
+import {faHeart} from "@fortawesome/free-solid-svg-icons/faHeart";
+import {faShareAlt} from "@fortawesome/free-solid-svg-icons/faShareAlt";
 import {BackTop, Tag} from "antd";
 import {library} from '@fortawesome/fontawesome-svg-core';
 import moment from 'moment';

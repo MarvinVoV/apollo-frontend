@@ -2,6 +2,8 @@ const merge = require('webpack-merge');
 const common = require('./webpack.common.js');
 const CompressionPlugin = require("compression-webpack-plugin");
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = merge(common, {
     mode: 'production',
@@ -23,13 +25,32 @@ module.exports = merge(common, {
             algorithm: "gzip",
             test: /\.js$|\.css$|\.html$/,
             threshold: 10240
-        })
+        }),
+        new BundleAnalyzerPlugin(),
     ],
     optimization: {
         minimizer: [
             new UglifyJsPlugin({
-                    exclude: [/\.min\.js$/gi]
+                exclude: [/\.min\.js$/gi],
+                parallel: true,
+                uglifyOptions: {
+                    output: {
+                        comments: false,
+                        beautify: false,
+                    },
+                    warnings: false,
+                    compress: {
+                        warnings: false, // Suppress uglification warnings
+                        unused: true,
+                        conditionals: true,
+                        dead_code: true,
+                        sequences: true,
+                        if_return: true,
+                        comparisons: true
+                    }
                 }
-            )]
-    },
+            }),
+            new OptimizeCSSAssetsPlugin({})
+        ],
+    }
 });

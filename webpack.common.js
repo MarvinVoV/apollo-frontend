@@ -10,17 +10,19 @@ module.exports = {
     output: {
         filename: '[name].bundle.js',
         // chunkFilename: '[name].bundle.js',
-        path: path.resolve(__dirname, 'dist')
+        path: path.resolve(__dirname, 'dist'),
+        pathinfo: false
     },
     resolve: {
         extensions: ['.js', '.jsx']
     },
     module: {
-        rules: [{
-            test: /\.(js|jsx)$/,
-            exclude: /node_modules/,
-            use: ['babel-loader']
-        },
+        rules: [
+            {
+                test: /\.(js|jsx)$/,
+                exclude: /node_modules/,
+                use: ['babel-loader'],
+            },
             {
                 test: /\.(css|scss)$/,
                 use: ['style-loader', 'css-loader']
@@ -42,10 +44,23 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: './public/index.html'
+            template: './public/index.html',
+            minify: {
+                removeComments: true,               //去注释
+                collapseWhitespace: true,           //压缩空格
+                removeAttributeQuotes: true         //去除属性引用
+            }
         }),
         new CleanWebpackPlugin(),
-        new webpack.HotModuleReplacementPlugin()
+        new webpack.HotModuleReplacementPlugin(),
+        new webpack.optimize.AggressiveMergingPlugin(), //Merge chunks
+        new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
+        new webpack.ContextReplacementPlugin(
+            /highlight\.js\/lib\/languages$/,
+            new RegExp(`^./(${['javascript', 'python', 'java',
+                'kotlin', 'sql', 'cpp', 'swift', 'less', 'css', 'bash', 'nginx',
+                'markdown', 'xml', 'php', 'yaml', 'json', 'dockerfile', 'shell'].join('|')})$`),
+        ),
     ],
     optimization: {
         splitChunks: {

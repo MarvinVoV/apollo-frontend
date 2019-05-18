@@ -2,14 +2,15 @@ import React, {Component} from 'react';
 import {Card, Layout, Tag} from "antd";
 import {library} from '@fortawesome/fontawesome-svg-core';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faCoffee, faCommentAlt, faShareAlt,faMailBulk} from '@fortawesome/free-solid-svg-icons'
-import {faGithub} from '@fortawesome/free-brands-svg-icons'
+import {faCoffee} from '@fortawesome/free-solid-svg-icons/faCoffee'
+import {faCommentAlt} from '@fortawesome/free-solid-svg-icons/faCommentAlt'
+import {faShareAlt} from '@fortawesome/free-solid-svg-icons/faShareAlt'
+import {faMailBulk} from '@fortawesome/free-solid-svg-icons/faMailBulk'
+import {faGithub} from '@fortawesome/free-brands-svg-icons/faGithub'
 import DefaultLayout from './DefaultLayout';
 import '../../theme/App.css';
 
-const {
-    Header, Content, Footer, Sider
-} = Layout;
+const {Content, Sider} = Layout;
 
 library.add(faGithub, faCommentAlt, faShareAlt, faCoffee, faMailBulk);
 

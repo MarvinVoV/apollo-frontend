@@ -2,7 +2,7 @@
 
 # Check nginx first
 CONFIG_PATH=`pwd`
-CONFIG_FILE=${CONFIG_PATH}/nginx.conf
+CONFIG_FILE=${CONFIG_PATH}/nginx-dev.conf
 
 nginx -t -c ${CONFIG_FILE}
 if [[ $? -ne 0 ]]; then

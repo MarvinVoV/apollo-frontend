@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Route, Link} from "react-router-dom";
-import {Layout, Menu} from "antd";
+import {Layout, Menu, Row, Col} from "antd";
 import '../../theme/App.css';
 
 
@@ -20,16 +20,24 @@ const DefaultLayout = ({component: Component, ...rest}) => {
                         defaultSelectedKeys={['home']}
                         className="menu"
                     >
-                        <Menu.Item key="home"><Link to="/">HOME</Link></Menu.Item>
-                        <Menu.Item key="about"><Link to="/front/about">ABOUT</Link></Menu.Item>
+                        <Menu.Item key="home"><Link to="/">首页</Link></Menu.Item>
+                        <Menu.Item key="about"><Link to="/front/about">关于</Link></Menu.Item>
                     </Menu>
                 </Header>
 
                 <Content className="content">
-                    <Component {...matchProps}/>
+                    <Row>
+                        <Col xs={0} sm={2} md={2} lg={2} xl={2}>
+                        </Col>
+                        <Col xs={24} sm={21} md={21} lg={21} xl={21}>
+                            <Component {...matchProps}/>
+                        </Col>
+                        <Col xs={0} sm={1} md={1} lg={1} xl={1}>
+                        </Col>
+                    </Row>
                 </Content>
                 <Footer className="footer">
-                    ©2018-2019 Created by sunyameng / Blog
+                    ©2018-2019 Created by Sunyameng / Blog
                 </Footer>
             </Layout>
         )}>

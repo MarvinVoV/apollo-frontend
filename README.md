@@ -33,3 +33,10 @@ docker-compose up --no-build
 
 ```
 
+## On Production
+```bash
+code apollo-front
+docker-compose pull
+docker-compose up -d
+
+```

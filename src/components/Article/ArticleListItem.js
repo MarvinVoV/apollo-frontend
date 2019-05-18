@@ -1,5 +1,5 @@
 import React from 'react';
-import {Divider, Tag} from 'antd';
+import {Divider, Tag, Row, Col} from 'antd';
 import {library} from '@fortawesome/fontawesome-svg-core';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faCoffee, faCommentAlt, faHeart, faShareAlt} from '@fortawesome/free-solid-svg-icons'
@@ -8,7 +8,6 @@ import 'moment/locale/zh-cn'
 import '../../theme/App.css';
 import MarkdownParser from '../MarkdownParser';
 import {parseResponse} from "../../utils/Tools";
-import config from '../../config'
 
 library.add(faHeart, faCommentAlt, faShareAlt, faCoffee);
 moment.locale('zh-cn');
@@ -51,18 +50,28 @@ const ArticleListItem = ({article}) => {
                 </div>
                 <MarkdownParser data={data.digest}/>
                 <div className="article_meta_info">
-                    <span className="article_meta_item">
-                        {renderTag(data.tag)}
-                    </span>
-                    <span className="article_meta_item">
-                        <a href="#"><FontAwesomeIcon icon={faHeart}/> {data.likeCount}</a></span>
-                    <span className="article_meta_item">
-                        <a href="#"><FontAwesomeIcon icon={faCommentAlt}/> {data.viewCount}</a></span>
-                    <span className="article_meta_item">
-                        <a href="#"><FontAwesomeIcon icon={faShareAlt}/> 分享</a></span>
-                    <span className="article_meta_item">
-                        {moment(new Date(data.modifiedTime)).format('YYYY-MM-DD HH:mm:ss')}
-                    </span>
+                    <Row>
+                        <Col xs={16} sm={16} md={16} lg={16} xl={16}>
+                            <span className="article_meta_item">
+                                {renderTag(data.tag)}
+                            </span>
+                        </Col>
+                        <Col xs={4} sm={4} md={4} lg={4} xl={2}>
+                             <span className="article_meta_item">
+                                <a href="#"><FontAwesomeIcon icon={faHeart}/> {data.likeCount}</a>
+                             </span>
+                        </Col>
+                        <Col xs={4} sm={4} md={4} lg={4} xl={2}>
+                            <span className="article_meta_item">
+                                <a href="#"><FontAwesomeIcon icon={faShareAlt}/> 分享</a>
+                            </span>
+                        </Col>
+                        <Col xs={0} sm={0} md={0} lg={0} xl={4}>
+                             <span className="article_meta_item">
+                                {moment(new Date(data.modifiedTime)).format('YYYY-MM-DD HH:mm')}
+                            </span>
+                        </Col>
+                    </Row>
                 </div>
             </div>
             <Divider/>

@@ -36,10 +36,11 @@ module.exports = merge(common, {
                 uglifyOptions: {
                     output: {
                         comments: false,
-                        beautify: false,
+                        beautify: false
                     },
                     warnings: false,
                     compress: {
+                        drop_console: true,
                         warnings: false, // Suppress uglification warnings
                         unused: true,
                         conditionals: true,

@@ -2,14 +2,15 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const webpack = require('webpack');
+// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
     entry: {
         app: './src/index.js'
     },
     output: {
-        filename: '[name].bundle.js',
-        // chunkFilename: '[name].bundle.js',
+        filename: '[name].[hash].js',
+        chunkFilename: '[name].[chunkhash].js',
         path: path.resolve(__dirname, 'dist'),
         pathinfo: false
     },
@@ -51,6 +52,7 @@ module.exports = {
                 removeAttributeQuotes: true         //去除属性引用
             }
         }),
+        new webpack.HashedModuleIdsPlugin(),
         new CleanWebpackPlugin(),
         new webpack.HotModuleReplacementPlugin(),
         new webpack.optimize.AggressiveMergingPlugin(), //Merge chunks
@@ -61,10 +63,22 @@ module.exports = {
                 'kotlin', 'sql', 'cpp', 'swift', 'less', 'css', 'bash', 'nginx',
                 'markdown', 'xml', 'php', 'yaml', 'json', 'dockerfile', 'shell'].join('|')})$`),
         ),
+        // new BundleAnalyzerPlugin()
     ],
     optimization: {
+        runtimeChunk: 'single',
         splitChunks: {
-            chunks: "all"
+            maxInitialRequests: Infinity,
+            minSize: 0,
+            cacheGroups: {
+                vendors: {
+                    test: /[\\/]node_modules[\\/]/,
+                    name: 'vendors',
+                    chunks: 'all',
+                    enforce: true
+                }
+            },
+
         },
     }
 };

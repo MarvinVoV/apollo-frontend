@@ -1,6 +1,6 @@
 const SERVICE_URL = {
-    production: 'http://isunyameng.com/server',
-    development: 'http://isunyameng.com/server',
+    production: 'https://isunyameng.com/server',
+    development: 'https://isunyameng.com/server',
     // development: 'http://localhost:8081',
     // development: 'http://localhost/server',
 };

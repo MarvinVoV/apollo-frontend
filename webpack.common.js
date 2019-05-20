@@ -1,7 +1,9 @@
 const path = require('path');
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-const webpack = require('webpack');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+
 // const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
@@ -52,6 +54,10 @@ module.exports = {
                 removeAttributeQuotes: true         //去除属性引用
             }
         }),
+        new CopyWebpackPlugin([
+            {from:'robots.txt',to:'robots.txt'} ,
+            {from:'sitemap.xml',to:'sitemap.xml'}
+        ]),
         new webpack.HashedModuleIdsPlugin(),
         new CleanWebpackPlugin(),
         new webpack.HotModuleReplacementPlugin(),

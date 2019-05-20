@@ -49,8 +49,8 @@ const ConnectedArticleDetail = ({article}) => {
         <div>
             <BackTop/>
             <div>
-                <div className="article_title">
-                    {data.title}
+                <div className="article_detail_title">
+                    <h4>{data.title}</h4>
                 </div>
                 <div className="article_meta_info">
                     <span> 发布于 {moment(new Date(data.modifiedTime)).fromNow()}</span>

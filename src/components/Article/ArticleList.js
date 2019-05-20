@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import ArticleListItem from './ArticleListItem';
 import {connect} from 'react-redux';
 import uuidv1 from 'uuid';

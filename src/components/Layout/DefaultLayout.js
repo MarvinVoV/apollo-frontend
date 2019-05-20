@@ -20,7 +20,7 @@ const DefaultLayout = ({component: Component, ...rest}) => {
                         defaultSelectedKeys={['home']}
                         className="menu"
                     >
-                        <Menu.Item key="home"><Link to="/">首页</Link></Menu.Item>
+                        <Menu.Item key="home"><Link to="/">博文</Link></Menu.Item>
                         <Menu.Item key="about"><Link to="/front/about">关于</Link></Menu.Item>
                     </Menu>
                 </Header>
@@ -37,7 +37,8 @@ const DefaultLayout = ({component: Component, ...rest}) => {
                     </Row>
                 </Content>
                 <Footer className="footer">
-                    ©2018-2019 Created by Sunyameng / Blog
+                    Copyright ©2018-2019 ISunyameng <br/>
+                    Created by Sunyameng / Blog
                 </Footer>
             </Layout>
         )}>

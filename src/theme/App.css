@@ -44,7 +44,6 @@ body {
     sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-
 }
 
 code {
@@ -105,9 +104,9 @@ code {
 }
 
 .article_title {
-    font-size: 2.4rem;
+    font-size: 1.4rem;
     line-height: 1.2;
-    /*color: black;*/
+    color: #212121;
 }
 
 .article_title a {
@@ -118,11 +117,40 @@ code {
     color: #1890ff;
 }
 
+.article_detail_title {
+    font-size: 2.0rem;
+    line-height: 1.2;
+    color: #212121;
+    display: inline;
+}
+
 .article_meta_info {
     color: #b4b4b4;
     font-size: 13px;
     margin-top: 10px;
     margin-bottom: 10px;
+}
+
+.article_list_item {
+    margin-top: 10px;
+    color: #888;
+    font-size: 13px;
+    display: -webkit-box;
+    margin-bottom: 15px;
+    line-height: 1.5;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-family: -apple-system,BlinkMacSystemFont,Helvetica Neue,PingFang SC,Microsoft YaHei,Source Han Sans SC,Noto Sans CJK SC,WenQuanYi Micro Hei,sans-serif;
+}
+
+.news__item-title {
+    display: inline;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 28px;
+    color: #212121;
+    position: relative;
+    vertical-align: middle;
 }
 
 .article_meta_info a {
